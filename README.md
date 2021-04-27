@@ -1,6 +1,8 @@
 ## MPG_WebApp
 Machine Learning Project Deploy using Django webapp with mongodb
 
+!pip install djongo
+
 # Prerequisite
 
 ### Web app related prerequisite

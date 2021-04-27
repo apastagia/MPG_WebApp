@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$', views.index, name='Homepage'),
     url('predictMPG', views.predictMPG, name = 'PredictMPG'),
+    url('viewDatabase', views.viewDatabase, name='viewDatabase'),
+    url('updateDatabase', views.updateDatabase, name='updateDatabase'),
 ]

@@ -4,14 +4,24 @@ from django.http import HttpResponse
 import pandas as pd
 import joblib
 
+from pymongo import MongoClient
+#client = MongoClient()
+client = MongoClient('localhost', 27017)
 
 # Create your views here.
 reloadModel = joblib.load('./models/RF_MPG.pkl')
 
 def index(request):
-    context = {'a':'Hello DjangoFramework'}
+    temp = {}
+    temp['cyl'] = 8
+    temp['disp'] = 307
+    temp['hp'] = 130
+    temp['wt'] = 504
+    temp['acc'] = 12
+    temp['yr'] = 70
+    temp['origin'] = 1
+    context = {'temp':temp}
     return render(request, 'index.html', context)
-    #return HttpResponse({'a':1})
 
 def predictMPG(request):
     print(request)
@@ -27,5 +37,11 @@ def predictMPG(request):
     
     testData = pd.DataFrame({'x':temp}).transpose()
     scoreval = reloadModel.predict(testData)[0]
-    context = {'scoreval':scoreval}
+    context = {'scoreval':scoreval, 'temp':temp}
     return render(request, 'index.html', context)
+
+def viewDatabase(request):
+    return None
+
+def updateDatabase(request):
+    return None

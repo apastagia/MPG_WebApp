@@ -2,7 +2,10 @@
 Machine Learning Project Deploy using Django webapp with mongodb
 
 !pip install django | pip install django
+
 !pip install djongo | pip install djongo
+
+!pip install pymongo | pip install pymongo
 
 # Prerequisite
 

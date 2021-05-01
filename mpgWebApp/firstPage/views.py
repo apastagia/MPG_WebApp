@@ -7,6 +7,8 @@ import joblib
 from pymongo import MongoClient
 #client = MongoClient()
 client = MongoClient('localhost', 27017)
+db = client['mpgDataBase']
+collectionD = db['mpgTable']
 
 # Create your views here.
 reloadModel = joblib.load('./models/RF_MPG.pkl')
@@ -41,7 +43,23 @@ def predictMPG(request):
     return render(request, 'index.html', context)
 
 def viewDatabase(request):
-    return None
+    countOfrow = collectionD.find().count()
+    context = {'countOfrow':countOfrow}
+    return render(request, 'viewDB.html', context)
 
 def updateDatabase(request):
-    return None
+    temp={}
+    temp['cyl']=request.POST.get('cylinderVal')
+    temp['disp']=request.POST.get('dispVal')
+    temp['hp']=request.POST.get('hrsPwrVal')
+    temp['wt']=request.POST.get('weightVal')
+    temp['acc']=request.POST.get('accVal')
+    temp['yr']=request.POST.get('modelVal')
+    temp['origin']=request.POST.get('originVal')
+    temp['mpg']=request.POST.get('mpgVal')
+    
+    collectionD.insert_one(temp)
+    countOfrow=collectionD.find().count()
+
+    context={'countOfrow':countOfrow}
+    return render(request,'viewDB.html',context)

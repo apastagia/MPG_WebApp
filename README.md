@@ -20,3 +20,11 @@ Machine Learning Project Deploy using Django webapp with mongodb
 
 ## Flowchart
 ![ML_Model_Deployment_Django](https://user-images.githubusercontent.com/62986688/115986670-f65bf600-a5ce-11eb-883d-a9935842a665.png)
+
+![MongoDB](https://user-images.githubusercontent.com/62986688/116772497-2131c880-aa6d-11eb-8f6f-ba3c9a001c66.png)
+
+![MongoDB Table entries](https://user-images.githubusercontent.com/62986688/116772500-25f67c80-aa6d-11eb-8209-998a55a5bff6.png)
+
+![WebApp](https://user-images.githubusercontent.com/62986688/116772506-2d1d8a80-aa6d-11eb-891f-897581b3e1d1.png)
+
+![DB Record](https://user-images.githubusercontent.com/62986688/116772512-327ad500-aa6d-11eb-86ab-e6da193ae0d0.png)
